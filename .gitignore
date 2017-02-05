@@ -408,3 +408,4 @@ $RECYCLE.BIN/
 /EcoZone.Domain/obj/
 /EcoZone.Domain/bin/
 /EcoZone.Front/build/
+.idea/vcs.xml
