@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoZone", "EcoZone\EcoZone.csproj", "{C16C76A0-53E2-4134-89A3-404E264A3843}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CAE82B0D-4DE6-41E4-B3EC-486C4B01CE74} = {CAE82B0D-4DE6-41E4-B3EC-486C4B01CE74}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoZone.Domain", "EcoZone.Domain\EcoZone.Domain.csproj", "{CAE82B0D-4DE6-41E4-B3EC-486C4B01CE74}"
 EndProject
