@@ -63,6 +63,7 @@
     <Compile Include="Configurations\TagEntityTypeConfiguration.cs" />
     <Compile Include="Configurations\UserEntityTypeConfiguration.cs" />
     <Compile Include="Context\EcoZoneDbContext.cs" />
+    <Compile Include="Helpers\Roles.cs" />
     <Compile Include="Migrations\201702051210433_Init.cs" />
     <Compile Include="Migrations\201702051210433_Init.Designer.cs">
       <DependentUpon>201702051210433_Init.cs</DependentUpon>
@@ -70,6 +71,10 @@
     <Compile Include="Migrations\201702051230319_AddedLikes.cs" />
     <Compile Include="Migrations\201702051230319_AddedLikes.Designer.cs">
       <DependentUpon>201702051230319_AddedLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702051956531_UpdatedUserData.cs" />
+    <Compile Include="Migrations\201702051956531_UpdatedUserData.Designer.cs">
+      <DependentUpon>201702051956531_UpdatedUserData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Article.cs" />
@@ -89,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702051230319_AddedLikes.resx">
       <DependentUpon>201702051230319_AddedLikes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702051956531_UpdatedUserData.resx">
+      <DependentUpon>201702051956531_UpdatedUserData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

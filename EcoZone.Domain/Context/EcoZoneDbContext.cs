@@ -9,8 +9,8 @@ namespace EcoZone.Domain.Context
     {
         public EcoZoneDbContext() : base("EcoZoneDb", false)
         {
-            Configuration.LazyLoadingEnabled = true;
-            Configuration.ProxyCreationEnabled = true;
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = true;
         }
 
         public DbSet<Article> Articles { get; set; }

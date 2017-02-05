@@ -1,5 +1,11 @@
+using System;
 using System.Data.Entity.Migrations;
+using System.Linq;
 using EcoZone.Domain.Context;
+using EcoZone.Domain.Helpers;
+using EcoZone.Domain.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EcoZone.Domain.Migrations
 {
@@ -7,23 +13,21 @@ namespace EcoZone.Domain.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(EcoZoneDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            if (!context.Roles.Any())
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var roles = Enum.GetValues(typeof(Roles)).Cast<Roles>().Select(x => new IdentityRole(x.ToString()));
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+                foreach (var role in roles)
+                    manager.Create(role);
+                context.SaveChanges();
+            }
         }
     }
 }

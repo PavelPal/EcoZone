@@ -7,6 +7,10 @@ namespace EcoZone.Domain.Configurations
     {
         public UserEntityTypeConfiguration()
         {
+            HasKey(x => x.Id);
+            HasMany(x => x.Roles).WithRequired().HasForeignKey(x => x.UserId);
+            HasMany(x => x.Logins).WithRequired().HasForeignKey(x => x.UserId);
+            HasMany(x => x.Claims).WithRequired().HasForeignKey(x => x.UserId);
             HasOptional(x => x.PendingData).WithMany().HasForeignKey(x => x.PendingDataId);
         }
     }
