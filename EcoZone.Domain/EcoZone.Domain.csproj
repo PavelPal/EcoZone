@@ -57,16 +57,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\ArticleEntityTypeConfiguration.cs" />
+    <Compile Include="Configurations\CommentEntityTypeConfiguration.cs" />
+    <Compile Include="Configurations\LikeEntityTypeConfiguration.cs" />
     <Compile Include="Configurations\TagEntityTypeConfiguration.cs" />
+    <Compile Include="Configurations\UserEntityTypeConfiguration.cs" />
     <Compile Include="Context\EcoZoneDbContext.cs" />
-    <Compile Include="Model\Tag.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Migrations\201702051210433_Init.cs" />
+    <Compile Include="Migrations\201702051210433_Init.Designer.cs">
+      <DependentUpon>201702051210433_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702051230319_AddedLikes.cs" />
+    <Compile Include="Migrations\201702051230319_AddedLikes.Designer.cs">
+      <DependentUpon>201702051230319_AddedLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702051210433_Init.resx">
+      <DependentUpon>201702051210433_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702051230319_AddedLikes.resx">
+      <DependentUpon>201702051230319_AddedLikes.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

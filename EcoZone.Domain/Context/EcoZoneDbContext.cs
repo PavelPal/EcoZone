@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
-using EcoZone.Domain.Model;
+using EcoZone.Domain.Configurations;
+using EcoZone.Domain.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EcoZone.Domain.Context
@@ -12,7 +13,10 @@ namespace EcoZone.Domain.Context
             Configuration.ProxyCreationEnabled = true;
         }
 
-        //public DbSet<Tag> Tags { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Like> Likes { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         public static EcoZoneDbContext Create()
         {
@@ -23,7 +27,11 @@ namespace EcoZone.Domain.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.Configurations.Add(new TagEntityTypeConfiguration());
+            modelBuilder.Configurations.Add(new ArticleEntityTypeConfiguration());
+            modelBuilder.Configurations.Add(new CommentEntityTypeConfiguration());
+            modelBuilder.Configurations.Add(new LikeEntityTypeConfiguration());
+            modelBuilder.Configurations.Add(new TagEntityTypeConfiguration());
+            modelBuilder.Configurations.Add(new UserEntityTypeConfiguration());
         }
     }
 }

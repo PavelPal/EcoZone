@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using EcoZone.Domain.Model;
+using EcoZone.Domain.Models;
 
 namespace EcoZone.Domain.Configurations
 {
