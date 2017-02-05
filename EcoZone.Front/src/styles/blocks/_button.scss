@@ -1,0 +1,26 @@
+.underlined-button {
+  text-decoration: none;
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  padding: 5px 0;
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    background: #fff;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+}

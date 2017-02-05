@@ -1,0 +1,24 @@
+<header class="home-header">
+    <div>
+        <h2>EcoZone</h2>
+        <p>самые последние экологические новости</p>
+    </div>
+</header>
+
+<section class="home-section news-section">
+    <md-card *ngFor="let article of popularNews">
+        <div md-card-image class="card-image" style="background-image: url('images/header.jpeg')"></div>
+        <md-card-content>
+            <h4>{{article.title}}</h4>
+            <p>{{article.description}}</p>
+        </md-card-content>
+
+        <md-card-actions>
+            <div class="meta-info">
+                <span>{{article.date | date: 'dd MMM yyyy'}}</span>
+                <span><i class="fa fa-comments"></i> {{article.comments}}</span>
+                <span><i class="fa fa-eye"></i> {{article.views}}</span>
+            </div>
+        </md-card-actions>
+    </md-card>
+</section>

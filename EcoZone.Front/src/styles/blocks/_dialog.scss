@@ -1,0 +1,16 @@
+search-dialog {
+  md-dialog-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      text-align: center;
+    }
+
+    input {
+      text-align: center;
+    }
+  }
+}

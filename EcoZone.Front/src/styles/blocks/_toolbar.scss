@@ -1,0 +1,31 @@
+md-toolbar.navigation-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s ease-in-out;
+  z-index: 100;
+  min-height: 54px;
+
+  &:not(.fixed) {
+    background: transparent;
+  }
+
+  &.fixed {
+    position: fixed;
+
+    md-toolbar-row {
+      height: 54px;
+    }
+  }
+
+  md-toolbar-row {
+    height: 74px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}

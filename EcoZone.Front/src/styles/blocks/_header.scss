@@ -1,0 +1,48 @@
+.home-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: {
+    image: url('../images/header-grey.jpeg');
+    position: center;
+    size: cover;
+    attachment: fixed;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2, p {
+    color: #fff;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 74px;
+    letter-spacing: 3.5px;
+    position: relative;
+    line-height: 72px;
+
+    &:after {
+      height: 2px;
+      position: absolute;
+      content: '';
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #fff;
+    }
+  }
+
+  p {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 17px;
+  }
+}
