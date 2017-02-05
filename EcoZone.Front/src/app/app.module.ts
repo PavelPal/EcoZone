@@ -2,11 +2,13 @@ import {MaterialModule} from "@angular/material";
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppComponent} from "./app.component";
-import {Home} from "./home/home.component";
-import {SearchComponent} from "./search/search.component";
-import {AboutComponent} from "./about/about.component";
+import {Home} from "./components/home/home.component";
+import {SearchComponent} from "./components/search/search.component";
+import {AboutComponent} from "./components/about/about.component";
 import {routing, appRoutingProviders} from "./app.routing";
 import {FormsModule} from "@angular/forms";
+import {Configuration} from "./app.constants";
+import {ArticleService} from "./services/articleService";
 
 @NgModule({
     imports: [
@@ -23,7 +25,9 @@ import {FormsModule} from "@angular/forms";
     ],
     entryComponents: [SearchComponent],
     providers: [
-        appRoutingProviders
+        appRoutingProviders,
+        ArticleService,
+        Configuration
     ],
     bootstrap: [AppComponent]
 })

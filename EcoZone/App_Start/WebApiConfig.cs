@@ -10,7 +10,7 @@ namespace EcoZone
 
             config.Routes.MapHttpRoute(
                 "DefaultApi",
-                "api/{controller}/{id}",
+                "{controller}/{id}",
                 new {id = RouteParameter.Optional}
             );
         }

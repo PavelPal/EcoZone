@@ -8,20 +8,33 @@ using EcoZone.Models;
 
 namespace EcoZone.Controllers
 {
-    [RoutePrefix("api/articles")]
+    [RoutePrefix("articles")]
     public class ArticlesController : ApiController
     {
         private readonly EcoZoneDbContext _context;
 
         public ArticlesController(EcoZoneDbContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         [HttpGet]
+        [Route("")]
         public IEnumerable<ArticleViewModel> Get()
         {
-            return _context.Articles.Where(x => x.IsApproved).Select(x => new ArticleViewModel(x));
+            var list = this._context.Articles.Where(x => x.IsApproved).Select(x => new ArticleViewModel
+            {
+                Id = x.Id,
+                Title = x.Title,
+                Description = x.Description,
+                Source = x.Source,
+                ImagePath = x.ImagePath,
+                Views = x.Views,
+                Likes = x.Likes.Count,
+                Date = x.Date,
+                IsApproved = x.IsApproved
+            });
+            return list;
         }
 
         [HttpGet]
@@ -29,14 +42,25 @@ namespace EcoZone.Controllers
         public IEnumerable<ArticleViewModel> GetPopular()
         {
             return
-                _context.Articles.Where(x => x.IsApproved)
+                this._context.Articles.Where(x => x.IsApproved)
                     .Include(x => x.Likes)
                     .Include(x => x.Comments)
                     .OrderBy(x => x.Views)
                     .ThenBy(x => x.Likes.Count)
                     .ThenBy(x => x.Comments.Count)
                     .Take(7)
-                    .Select(x => new ArticleViewModel(x));
+                    .Select(x => new ArticleViewModel
+                    {
+                        Id = x.Id,
+                        Title = x.Title,
+                        Description = x.Description,
+                        Source = x.Source,
+                        ImagePath = x.ImagePath,
+                        Views = x.Views,
+                        Likes = x.Likes.Count,
+                        Date = x.Date,
+                        IsApproved = x.IsApproved
+                    });
         }
 
         [HttpGet]
@@ -45,16 +69,33 @@ namespace EcoZone.Controllers
             if (!id.HasValue)
                 return BadRequest();
 
-            var article = await _context.Articles.FirstOrDefaultAsync(x => x.IsApproved && x.Id == id);
+            var article = await this._context.Articles.FirstOrDefaultAsync(x => x.IsApproved && x.Id == id);
             if (article == null)
                 return NotFound();
 
-            return new ArticleViewModel(article);
+            return new ArticleViewModel
+            {
+                Id = article.Id,
+                Title = article.Title,
+                Description = article.Description,
+                Source = article.Source,
+                ImagePath = article.ImagePath,
+                Views = article.Views,
+                Likes = article.Likes.Count,
+                Date = article.Date,
+                IsApproved = article.IsApproved
+            };
         }
 
-        public void Post([FromBody] CreateArticleViewModel article)
+        public async Task<object> Post([FromBody] CreateArticleViewModel article)
         {
-            // todo adding article
+            if (article == null)
+                return BadRequest();
+
+            this._context.Articles.Add(article.MapToArticle());
+            this._context.ChangeTracker.DetectChanges();
+            await this._context.SaveChangesAsync();
+            return Ok();
         }
 
         [HttpPut]
@@ -70,16 +111,16 @@ namespace EcoZone.Controllers
                 return BadRequest();
 
             var article =
-                await _context.Articles.Include(x => x.Comments)
+                await this._context.Articles.Include(x => x.Comments)
                     .Include(x => x.Likes)
                     .Include(x => x.PendingArticle)
                     .FirstOrDefaultAsync(x => x.Id == id.Value);
             if (article == null)
                 return NotFound();
 
-            _context.Articles.Remove(article);
-            _context.ChangeTracker.DetectChanges();
-            await _context.SaveChangesAsync();
+            this._context.Articles.Remove(article);
+            this._context.ChangeTracker.DetectChanges();
+            await this._context.SaveChangesAsync();
             return Ok();
         }
     }

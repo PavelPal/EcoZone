@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {MdDialog} from "@angular/material";
-import {SearchComponent} from "./search/search.component";
+import {SearchComponent} from "./components/search/search.component";
 
 @Component({
     selector: "app",
