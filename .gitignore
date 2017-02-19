@@ -409,3 +409,5 @@ $RECYCLE.BIN/
 /EcoZone.Domain/bin/
 /EcoZone.Front/build/
 .idea/vcs.xml
+EcoZone.Domain/App.config
+EcoZone/Web.config
