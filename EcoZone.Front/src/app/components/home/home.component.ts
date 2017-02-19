@@ -6,7 +6,7 @@ import "rxjs/add/operator/catch";
 
 @Component({
     selector: 'app-home',
-    templateUrl: './app/home/home.html'
+    templateUrl: './app/components/home/home.html'
 })
 export class Home implements OnInit {
     private popularNews: Array<ArticleInfo> = [];

@@ -1,12 +1,12 @@
 @import '../../../node_modules/@angular/material/core/theming/_all-theme';
 
-@include md-core();
+@include mat-core();
 
-$ecozone-primary: md-palette($md-blue-grey);
-$ecozone-accent: md-palette($md-light-blue, A400, A200, A700);
+$ecozone-primary: mat-palette($mat-blue-grey);
+$ecozone-accent: mat-palette($mat-light-blue, A400, A200, A700);
 
-$ecozone-warn: md-palette($md-red);
+$ecozone-warn: mat-palette($mat-red);
 
-$ecozone-theme: md-light-theme($ecozone-primary, $ecozone-accent, $ecozone-warn);
+$ecozone-theme: mat-light-theme($ecozone-primary, $ecozone-accent, $ecozone-warn);
 
 @include angular-material-theme($ecozone-theme);
