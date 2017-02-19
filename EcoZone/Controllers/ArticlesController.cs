@@ -39,27 +39,24 @@ namespace EcoZone.Controllers
 
         [HttpGet]
         [Route("getPopular")]
-        public IEnumerable<ArticleViewModel> GetPopular()
+        public IEnumerable<ArticleInfoViewModel> GetPopular()
         {
             return
                 this._context.Articles.Where(x => x.IsApproved)
-                    .Include(x => x.Likes)
                     .Include(x => x.Comments)
-                    .OrderBy(x => x.Views)
-                    .ThenBy(x => x.Likes.Count)
-                    .ThenBy(x => x.Comments.Count)
-                    .Take(7)
-                    .Select(x => new ArticleViewModel
+                    .OrderByDescending(x => x.Date)
+                    .ThenByDescending(x => x.Views)
+                    .ThenByDescending(x => x.Comments.Count)
+                    .Take(11)
+                    .Select(x => new ArticleInfoViewModel
                     {
                         Id = x.Id,
                         Title = x.Title,
                         Description = x.Description,
-                        Source = x.Source,
                         ImagePath = x.ImagePath,
                         Views = x.Views,
-                        Likes = x.Likes.Count,
-                        Date = x.Date,
-                        IsApproved = x.IsApproved
+                        Comments = x.Comments.Count,
+                        Date = x.Date
                     });
         }
 

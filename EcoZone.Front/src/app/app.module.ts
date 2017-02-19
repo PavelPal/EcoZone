@@ -8,7 +8,7 @@ import {AboutComponent} from "./components/about/about.component";
 import {routing, appRoutingProviders} from "./app.routing";
 import {FormsModule} from "@angular/forms";
 import {Configuration} from "./app.constants";
-import {ArticleService} from "./services/articleService";
+import {ArticleService} from "./services/article.service";
 
 @NgModule({
     imports: [

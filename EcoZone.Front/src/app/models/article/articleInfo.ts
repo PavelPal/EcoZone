@@ -1,9 +1,9 @@
-export class Article {
+export class ArticleInfo {
     private id: number;
     private title: string;
     private description: string;
+    private imagePath: string;
     private views: number;
     private comments: number;
-    private imagePath: string;
     private date;
 }
