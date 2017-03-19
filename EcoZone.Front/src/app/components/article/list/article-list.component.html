@@ -1,12 +1,5 @@
-<header class="home-header">
-    <div>
-        <h2>EcoZone</h2>
-        <p>самые последние экологические новости</p>
-    </div>
-</header>
-
-<section class="home-section news-section">
-    <md-card *ngFor="let article of popularNews">
+<section class="news-section">
+    <md-card *ngFor="let article of list">
         <div md-card-image class="card-image" style="background-image: url('images/header.jpeg')"></div>
         <md-card-content>
             <h4>{{article.title}}</h4>

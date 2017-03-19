@@ -1,10 +1,14 @@
 @import 'tools/normalize';
 @import 'tools/theme';
+@import 'tools/vars';
 @import 'tools/font-awesome';
+@import 'blocks/typography';
 @import 'blocks/toolbar';
 @import 'blocks/header';
+@import 'blocks/sidenav';
 @import 'blocks/button';
 @import 'blocks/dialog';
 @import 'blocks/input';
 @import 'blocks/loader';
 @import 'blocks/section';
+@import 'blocks/footer';

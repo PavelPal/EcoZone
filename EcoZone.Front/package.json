@@ -8,33 +8,25 @@
     "start": "concurrent --kill-others \"gulp watch\" \"lite-server\"",
     "postinstall": "typings install"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kolorobot/angular2-typescript-gulp.git"
-  },
-  "author": "Rafał Borowiec",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kolorobot/angular2-typescript-gulp/issues"
-  },
   "dependencies": {
-    "@angular/common": "~2.2.4",
-    "@angular/compiler": "~2.2.4",
-    "@angular/core": "~2.2.4",
-    "@angular/forms": "~2.2.4",
-    "@angular/http": "~2.2.4",
+    "@angular/common": "^2.2.4",
+    "@angular/compiler": "^2.2.4",
+    "@angular/core": "^2.3.0",
+    "@angular/forms": "^2.2.4",
+    "@angular/http": "^2.2.4",
     "@angular/material": "^2.0.0-beta.1",
-    "@angular/platform-browser": "~2.2.4",
-    "@angular/platform-browser-dynamic": "~2.2.4",
-    "@angular/router": "~3.2.4",
-    "@angular/upgrade": "~2.2.4",
+    "@angular/platform-browser": "^2.2.4",
+    "@angular/platform-browser-dynamic": "^2.2.4",
+    "@angular/router": "^3.2.4",
+    "@angular/upgrade": "^2.2.4",
     "core-js": "^2.4.1",
     "hammerjs": "^2.0.8",
+    "minimatch": "^3.0.3",
     "normalize-scss": "^6.0.0",
     "reflect-metadata": "^0.1.3",
-    "rxjs": "5.0.0-beta.12",
-    "systemjs": "0.19.27",
-    "zone.js": "^0.6.23"
+    "rxjs": "^5.0.0-beta.12",
+    "systemjs": "^0.19.27",
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "@types/hammerjs": "^2.0.34",

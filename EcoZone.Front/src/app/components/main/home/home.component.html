@@ -1,0 +1,8 @@
+<main-header [title]="title" [subtitle]="subtitle"></main-header>
+
+<article-list [list]="articles"></article-list>
+
+<section class="loader-section" *ngIf="canLoad">
+    <md-progress-bar [color]="'primary'" [mode]="'indeterminate'" *ngIf="isLoading"></md-progress-bar>
+    <a md-raised-button (click)="loadMore()" *ngIf="!isLoading">Показать больше</a>
+</section>

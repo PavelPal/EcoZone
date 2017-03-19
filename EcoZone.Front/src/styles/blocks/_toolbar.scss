@@ -29,3 +29,14 @@ md-toolbar.navigation-toolbar {
     }
   }
 }
+
+md-toolbar {
+  md-toolbar-row {
+    display: flex;
+    flex-direction: row;
+
+    .md-toolbar-header {
+      flex: 1;
+    }
+  }
+}

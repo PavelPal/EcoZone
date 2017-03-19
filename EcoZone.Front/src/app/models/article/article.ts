@@ -1,7 +1,7 @@
-import {User} from "../user";
-import {Comment} from "../comment";
-import {Tag} from "../tag";
-import {Like} from "../like";
+import { User } from "../user";
+import { Comment } from "../comment";
+import { Tag } from "../tag";
+import { Like } from "../like";
 
 export class Article {
     private id: number;

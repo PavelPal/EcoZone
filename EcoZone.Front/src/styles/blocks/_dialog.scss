@@ -1,5 +1,5 @@
 search-dialog {
-  md-dialog-content {
+  md-dialog-content.mat-dialog-content {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -7,6 +7,7 @@ search-dialog {
 
     h3 {
       text-align: center;
+      color: $title-color;
     }
 
     input {

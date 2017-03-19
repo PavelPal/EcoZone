@@ -1,0 +1,22 @@
+<md-toolbar class="" color="primary">
+    <a class="mat-button button-flat button-default" md-mini-fab (click)="sidenav.toggle()">
+        <i class="fa fa-bars"></i>
+    </a>
+    <span class="md-toolbar-header">Admin panel</span>
+    <a class="mat-button button-flat button-default" md-mini-fab (click)="toHome()">
+        <i class="fa fa-home"></i>
+    </a>
+</md-toolbar>
+
+<md-sidenav-container>
+    <md-sidenav #sidenav mode="side" opened="true">
+        <md-nav-list>
+            <a md-list-item routerLink="{{link.value}}" *ngFor="let link of links">{{link.name}}</a>
+        </md-nav-list>
+        <md-nav-list>
+            <a md-list-item>Log out</a>
+        </md-nav-list>
+    </md-sidenav>
+    
+    <router-outlet></router-outlet>
+</md-sidenav-container>

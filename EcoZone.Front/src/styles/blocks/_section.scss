@@ -1,12 +1,16 @@
-.home-section {
-  padding: 50px 10px;
-  min-height: 100vh;
+.loader-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 15px;
+  min-height: 36px;
 }
 
 .news-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 10px;
 
   md-card {
     box-sizing: border-box;
@@ -34,7 +38,7 @@
       flex: 1;
 
       h4 {
-        color: #505050;
+        color: $title-color;
         font-size: 18px;
         margin-bottom: 10px;
         white-space: nowrap;

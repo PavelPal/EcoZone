@@ -1,0 +1,13 @@
+<md-toolbar class="navigation-toolbar" color="primary" [ngClass]="{'fixed': isFixedNavigation}">
+    <a class="underlined-button" routerLink=".">Home</a>
+    <a class="underlined-button" routerLink="about">News</a>
+    <a class="underlined-button" routerLink="about">About</a>
+    <a class="underlined-button" routerLink="about">More</a>
+    <a class="underlined-button" (click)="openSearchDialog()">Search</a>
+</md-toolbar>
+
+<section>
+    <router-outlet></router-outlet>
+</section>
+
+<footer></footer>

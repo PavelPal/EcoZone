@@ -1,12 +1,12 @@
 md-input-container {
-  .md-input-underline .md-input-ripple {
+  .mat-input-underline .mat-input-ripple {
     transition: all .3s ease-in-out;
     left: 50%;
     width: 0;
     transform: none;
     opacity: 1;
 
-    &.md-focused {
+    &.mat-focused {
       left: 0;
       width: 100%;
     }
