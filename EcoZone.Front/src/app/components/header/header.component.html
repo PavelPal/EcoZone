@@ -2,5 +2,6 @@
     <div>
         <h2>{{title}}</h2>
         <p>{{subtitle}}</p>
+        <a *ngIf="homeLink" class="underlined-button" (click)="toHome()">go to homepage</a>
     </div>
 </header>

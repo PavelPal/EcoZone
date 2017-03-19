@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'main-header',
@@ -7,4 +8,11 @@ import { Component, Input } from "@angular/core";
 export class HeaderComponent {
     @Input() title: string;
     @Input() subtitle: string;
+    @Input() homeLink: boolean;
+
+    constructor(private router:Router) {}
+
+    toHome(): void {
+        this.router.navigate(['/home']);
+    }
 }
