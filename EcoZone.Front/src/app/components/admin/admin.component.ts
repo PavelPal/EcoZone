@@ -1,6 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { Link } from "../../models/link";
-import { Router } from "@angular/router";
+import { Component, Input } from '@angular/core';
+import { Link } from '../../models/link';
 
 @Component({
     selector: 'admin',
@@ -8,14 +7,10 @@ import { Router } from "@angular/router";
 })
 export class AdminComponent {
     private links: Array<Link> = [
-        new Link("Dashboard", "dashboard"),
-        new Link("Users", "users"),
-        new Link("Settings", "settings")
+        new Link('Dashboard', './dashboard', 'fa-tachometer'),
+        new Link('Articles', './articles', 'fa-book'),
+        new Link('Users', './users', 'fa-users'),
+        new Link('Comments', './comments', 'fa-comments'),
+        new Link('Settings', './settings', 'fa-sliders')
     ];
-
-    constructor(private router:Router) {}
-
-    toHome(): void {
-        this.router.navigate(['/home']);
-    }
 }

@@ -3,7 +3,7 @@
         <i class="fa fa-bars"></i>
     </a>
     <span class="md-toolbar-header">Admin panel</span>
-    <a class="mat-button button-flat button-default" md-mini-fab (click)="toHome()">
+    <a class="mat-button button-flat button-default" md-mini-fab [routerLink]="['/home']">
         <i class="fa fa-home"></i>
     </a>
 </md-toolbar>
@@ -11,10 +11,15 @@
 <md-sidenav-container>
     <md-sidenav #sidenav mode="side" opened="true">
         <md-nav-list>
-            <a md-list-item routerLink="{{link.value}}" *ngFor="let link of links">{{link.name}}</a>
+            <a md-list-item [routerLink]="[link.value]" *ngFor="let link of links">
+                <md-icon><i class="fa" [ngClass]="link.iconClass"></i></md-icon> {{link.name}}
+            </a>
         </md-nav-list>
+        <md-divider></md-divider>
         <md-nav-list>
-            <a md-list-item>Log out</a>
+            <a md-list-item>
+                <md-icon><i class="fa fa-sign-out"></i></md-icon> Log out
+            </a>
         </md-nav-list>
     </md-sidenav>
     

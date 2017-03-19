@@ -51,6 +51,13 @@
       "check-decl",
       "check-operator",
       "check-separator"
-    ]
+    ],
+    "quotemark": [true, "single", "avoid-escape"],
+    "prefer-method-signature": true,
+    "member-access": [true, "check-accessor"],
+    "member-ordering": [true, { "order": "fields-first" }],
+    "no-shadowed-variable": true,
+    "no-var-keyword": true,
+    "max-classes-per-file": [true, 1]
   }
 }

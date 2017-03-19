@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
-import "rxjs/add/operator/map";
-import { Observable } from "rxjs/Observable";
-import { Configuration } from "../app.constants";
-import { ArticleInfo } from "../models/article/articleInfo";
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+import { Configuration } from '../app.constants';
+import { ArticleInfo } from '../models/article/articleInfo';
 
 @Injectable()
 export class ArticleService {

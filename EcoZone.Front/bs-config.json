@@ -1,4 +1,5 @@
 {
+  "injectChanges": true,
   "port": 8000,
   "reloadOnRestart": false,
   "files": [

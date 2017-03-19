@@ -1,18 +1,11 @@
-import { Component, Input } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'main-header',
     templateUrl: './app/components/header/header.component.html'
 })
 export class HeaderComponent {
-    @Input() title: string;
-    @Input() subtitle: string;
-    @Input() homeLink: boolean;
-
-    constructor(private router:Router) {}
-
-    toHome(): void {
-        this.router.navigate(['/home']);
-    }
+    @Input() private title: string;
+    @Input() private subtitle: string;
+    @Input() private homeLink: boolean;
 }

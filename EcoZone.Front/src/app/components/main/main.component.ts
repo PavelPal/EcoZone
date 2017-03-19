@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
-import { MdDialog } from "@angular/material";
-import { SearchComponent } from "./search/search.component";
+import { Component } from '@angular/core';
+import { MdDialog } from '@angular/material';
+import { SearchComponent } from './search/search.component';
 
 @Component({
     selector: 'main',
@@ -13,13 +13,13 @@ export class MainComponent {
 
     constructor(public dialog: MdDialog) {}
 
-    isFixed($event) {
+    private isFixed($event) {
         if ($event !== undefined) {
-            this.isFixedNavigation = $event.target.body.scrollTop > 250;
+            this.isFixedNavigation = $event.target.body.scrollTop > (window.screen.height / 1.5);
         }
     }
 
-    openSearchDialog() {
+    private openSearchDialog() {
         this.dialog.open(SearchComponent, {
             height: '170px',
             width: '400px',

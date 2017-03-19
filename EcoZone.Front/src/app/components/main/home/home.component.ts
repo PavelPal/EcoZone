@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { ArticleService } from "../../../services/article.service";
-import { ArticleInfo } from "../../../models/article/articleInfo";
-import "rxjs/add/operator/map";
-import "rxjs/add/operator/catch";
+import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../../../services/article.service';
+import { ArticleInfo } from '../../../models/article/articleInfo';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Component({
     selector: 'home',
     templateUrl: './app/components/main/home/home.component.html'
 })
 export class HomeComponent implements OnInit {
-    private title: string = "EcoZone";
-    private subtitle: string = "latest environmental news";
+    private title: string = 'EcoZone';
+    private subtitle: string = 'latest environmental news';
     private articles: Array<ArticleInfo> = [];
     private canLoad: boolean = true;
     private isLoading: boolean = false;
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
     constructor(private _dataService: ArticleService) {}
 
-    ngOnInit(): void {
+    public ngOnInit():void {
         if (!this.isLoading) {
             this.isLoading = true;
             for (let i = 0; i < 20; i++) {
