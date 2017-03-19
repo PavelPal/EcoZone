@@ -10,7 +10,7 @@ import "rxjs/add/operator/catch";
 })
 export class HomeComponent implements OnInit {
     private title: string = "EcoZone";
-    private subtitle: string = "самые последние экологические новости";
+    private subtitle: string = "latest environmental news";
     private articles: Array<ArticleInfo> = [];
     private canLoad: boolean = true;
     private isLoading: boolean = false;
