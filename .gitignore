@@ -411,3 +411,4 @@ $RECYCLE.BIN/
 .idea/vcs.xml
 EcoZone.Domain/App.config
 EcoZone/Web.config
+EcoZone.Front/.vscode
