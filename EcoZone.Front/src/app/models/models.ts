@@ -1,4 +1,5 @@
 export * from './admin-card'
+export * from './auth-data'
 export * from './comment'
 export * from './like'
 export * from './link'

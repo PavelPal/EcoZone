@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { LoginViewModel } from '../view-models/login';
+import { AuthData } from '../models/models';
 
 @Injectable()
 export class AuthenticationService {
@@ -12,7 +12,7 @@ export class AuthenticationService {
         this.token = user && user.token;
     }
 
-    public login(model: LoginViewModel): Observable<boolean> {
+    public login(model: AuthData): Observable<boolean> {
         // rewrite
         return this.http.post('/api/login', model)
             .map((response: Response) => {

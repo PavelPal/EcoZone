@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
-import { LoginViewModel } from '../../view-models/login';
+import { AuthData } from '../../models/models';
 
 @Component({
     selector: 'login',
     templateUrl: './app/components/login/login.component.html'
 })
 export class LoginComponent implements OnInit {
-    private model: LoginViewModel = new LoginViewModel();
+    private model: AuthData = new AuthData();
     private loading: boolean = false;
     private error: string = '';
 
