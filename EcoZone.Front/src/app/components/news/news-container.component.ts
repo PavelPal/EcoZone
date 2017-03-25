@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
     selector: 'news-container',
     templateUrl: './app/components/news/news-container.component.html'
 })
-export class NewsContainerComponent {}
+export class NewsContainerComponent { }

@@ -5,13 +5,13 @@ import { SearchComponent } from './search/search.component';
 @Component({
     selector: 'main',
     providers: [MdDialog],
-    host: {'(window:scroll)': 'isFixed($event)'},
+    host: { '(window:scroll)': 'isFixed($event)' },
     templateUrl: './app/components/main/main.component.html'
 })
 export class MainComponent {
     private isFixedNavigation: boolean = false;
 
-    constructor(public dialog: MdDialog) {}
+    constructor(public dialog: MdDialog) { }
 
     private isFixed($event) {
         if ($event !== undefined) {

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ArticleInfo } from '../../../models/article/articleInfo';
+import { ArticleInfo } from '../../../models/article/article-info';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'article-list',
@@ -7,4 +8,11 @@ import { ArticleInfo } from '../../../models/article/articleInfo';
 })
 export class ArticlesComponent {
     @Input() private list: Array<ArticleInfo> = [];
+    @Input() private routePrefix: string = '';
+
+    constructor(private router: Router) { }
+
+    private goToArticle = (id): void => {
+        this.router.navigate(['/news/article', id]);
+    }
 }

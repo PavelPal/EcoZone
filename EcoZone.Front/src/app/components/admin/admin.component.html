@@ -8,6 +8,8 @@
     </a>
 </md-toolbar>
 
+<progress-bar></progress-bar>
+
 <md-sidenav-container>
     <md-sidenav #sidenav mode="side" opened="true">
         <md-nav-list>
@@ -22,6 +24,8 @@
             </a>
         </md-nav-list>
     </md-sidenav>
-    
-    <router-outlet></router-outlet>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
 </md-sidenav-container>

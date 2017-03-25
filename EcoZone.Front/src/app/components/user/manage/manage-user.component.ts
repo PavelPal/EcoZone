@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
     selector: 'manage-user',
     templateUrl: './app/components/user/manage/manage-user.component.html'
 })
-export class ManageUserComponent {}
+export class ManageUserComponent { }

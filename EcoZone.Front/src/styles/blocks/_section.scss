@@ -86,3 +86,32 @@
     }
   }
 }
+
+.dashboard-head-section {
+  display: flex;
+  flex-direction: row;
+
+  md-card {
+    margin: 0 8px;
+    width: 33.33%;
+    color: #fff;
+
+    h3 {
+      font-size: 24px;
+      margin: 0
+    }
+
+    p {
+      margin: 0;
+      opacity: 0.7;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

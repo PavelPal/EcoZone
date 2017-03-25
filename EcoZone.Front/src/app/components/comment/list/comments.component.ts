@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
     selector: 'comments',
     templateUrl: './app/components/comment/list/comments.component.html'
 })
-export class CommentsComponent {}
+export class CommentsComponent { }

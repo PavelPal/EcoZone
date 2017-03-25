@@ -1,5 +1,5 @@
 <section class="news-section">
-    <md-card *ngFor="let article of list">
+    <md-card *ngFor="let article of list" (click)="goToArticle(article.id)">
         <div md-card-image class="card-image" style="background-image: url('images/header.jpeg')"></div>
         <md-card-content>
             <h4>{{article.title}}</h4>

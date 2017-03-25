@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../../../services/article.service';
-import { ArticleInfo } from '../../../models/article/articleInfo';
+import { ArticleInfo } from '../../../models/article/article-info';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -17,14 +17,12 @@ export class HomeComponent implements OnInit {
     private skip: number = 0;
     private take: number = 11;
 
-    constructor(private _dataService: ArticleService) {}
+    constructor(private _dataService: ArticleService) { }
 
-    public ngOnInit():void {
+    public ngOnInit(): void {
         if (!this.isLoading) {
             this.isLoading = true;
-            for (let i = 0; i < 20; i++) {
-                this.articles.push(new ArticleInfo());
-            }
+            this.articles = this._dataService.get(this.skip, this.take);
             // this._dataService
             //     .get(this.skip, this.take)
             //     .subscribe((data: Array<ArticleInfo>) => {
@@ -48,6 +46,7 @@ export class HomeComponent implements OnInit {
     private loadMore = (): void => {
         if (this.canLoad && !this.isLoading) {
             this.isLoading = true;
+            this.articles = this.articles.concat(this._dataService.get(0, 12));
             // this._dataService
             //     .get(this.skip, this.take)
             //     .subscribe((data: Array<ArticleInfo>) => this.setArticles(data),

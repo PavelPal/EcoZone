@@ -1,6 +1,6 @@
 <main-header [title]="title" [subtitle]="subtitle"></main-header>
 
-<article-list [list]="articles"></article-list>
+<article-list [list]="articles" [routePrefix]="'/news'"></article-list>
 
 <section class="loader-section" *ngIf="canLoad">
     <md-progress-bar [color]="'primary'" [mode]="'indeterminate'" *ngIf="isLoading"></md-progress-bar>

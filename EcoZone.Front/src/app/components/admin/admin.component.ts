@@ -10,6 +10,7 @@ export class AdminComponent {
         new Link('Dashboard', './dashboard', 'fa-tachometer'),
         new Link('Articles', './articles', 'fa-book'),
         new Link('Users', './users', 'fa-users'),
+        new Link('Subscribers', './subscribers', 'fa-envelope'),
         new Link('Comments', './comments', 'fa-comments'),
         new Link('Settings', './settings', 'fa-sliders')
     ];

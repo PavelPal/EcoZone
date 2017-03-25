@@ -11,7 +11,7 @@ export class ErrorComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router) {}
+        private router: Router) { }
 
     public ngOnInit() {
         this.subtitle = this.route.snapshot.data['subtitle'];

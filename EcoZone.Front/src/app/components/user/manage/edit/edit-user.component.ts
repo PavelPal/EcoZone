@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
     selector: 'edit-user',
     templateUrl: './app/components/user/manage/edit/edit-user.component.html'
 })
-export class EditUserComponent {}
+export class EditUserComponent { }

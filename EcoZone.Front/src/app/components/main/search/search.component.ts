@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
     selector: 'search-dialog',
     templateUrl: './app/components/main/search/search.component.html',
 })
-export class SearchComponent {}
+export class SearchComponent { }

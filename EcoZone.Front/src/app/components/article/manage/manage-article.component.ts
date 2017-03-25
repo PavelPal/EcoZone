@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
     selector: 'manage-article',
     templateUrl: './app/components/article/manage/manage-article.component.html'
 })
-export class ManageArticleComponent {}
+export class ManageArticleComponent { }

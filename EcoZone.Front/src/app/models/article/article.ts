@@ -16,4 +16,14 @@ export class Article {
     private tags: Array<Tag>;
     private comments: Array<Comment>;
     private likes: Array<Like>;
+
+    constructor(id) {
+        this.id = id;
+        this.title = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+            'Distinctio sapiente ratione officiis laboriosam, ' +
+            'ipsum quod aperiam illum eos ad hic dolorum non nam ' +
+            'voluptatem eveniet alias architecto fuga corrupti. Quos.';
+        this.description = '';
+        this.date = new Date();
+    }
 }

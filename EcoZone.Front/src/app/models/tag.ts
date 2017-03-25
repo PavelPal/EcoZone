@@ -1,4 +1,6 @@
 export class Tag {
-    private id: number;
-    private name: string;
+
+    constructor(
+        private id: number,
+        private name: string) { }
 }

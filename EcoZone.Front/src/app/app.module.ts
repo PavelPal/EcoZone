@@ -31,6 +31,14 @@ import { AddUserComponent } from './components/user/manage/add/add-user.componen
 import { MoreComponent } from './components/main/more/more.component';
 import { NewsComponent } from './components/news/list/news.component';
 import { NewsContainerComponent } from './components/news/news-container.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/signup/signup.component';
+import { AuthenticationService } from './services/authentication.service';
+import { ProgressBar } from './components/progress-bar/progress-bar.component';
+import { UserService } from './services/user.service';
+import { CommentService } from './services/comment.service';
+import { SubscribersComponent } from './components/subscribe/list/subscribers.component';
+import { AdminService } from './services/admin.service';
 
 @NgModule({
     imports: [
@@ -69,16 +77,25 @@ import { NewsContainerComponent } from './components/news/news-container.compone
         ManageArticleComponent,
         EditArticleComponent,
         AddArticleComponent,
+        // subscribers
+        SubscribersComponent,
         // common
+        LoginComponent,
+        SignUpComponent,
         ErrorComponent,
-        HeaderComponent
+        HeaderComponent,
+        ProgressBar
     ],
     entryComponents: [SearchComponent],
     providers: [
         appRoutingProviders,
+        AuthenticationService,
+        AdminService,
         ArticleService,
+        UserService,
+        CommentService,
         Configuration
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
