@@ -39,6 +39,7 @@ import { UserService } from './services/user.service';
 import { CommentService } from './services/comment.service';
 import { SubscribersComponent } from './components/subscribe/list/subscribers.component';
 import { AdminService } from './services/admin.service';
+import { AdminCardsComponent } from './components/admin/cards/admin-cards.component';
 
 @NgModule({
     imports: [
@@ -59,6 +60,7 @@ import { AdminService } from './services/admin.service';
         NewsContainerComponent,
         // admin
         AdminComponent,
+        AdminCardsComponent,
         DashboardComponent,
         SettingsComponent,
         // comment

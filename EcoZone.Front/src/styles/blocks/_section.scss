@@ -87,11 +87,11 @@
   }
 }
 
-.dashboard-head-section {
+admin-cards {
   display: flex;
   flex-direction: row;
 
-  md-card {
+  .mat-card {
     margin: 0 8px;
     width: 33.33%;
     color: #fff;

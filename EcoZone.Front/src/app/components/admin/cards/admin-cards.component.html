@@ -1,0 +1,6 @@
+<md-card *ngFor="let card of cards" [style.background]="card.color">
+    <md-card-content>
+        <h3>{{card.quantity}}</h3>
+        <p>{{card.name}}</p>
+    </md-card-content>
+</md-card>

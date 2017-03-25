@@ -13,6 +13,6 @@ export class DashboardComponent implements OnInit {
         private adminService: AdminService) { }
 
     public ngOnInit(): void {
-        this.cards = this.adminService.getAdminCards();
+        this.cards = this.adminService.getCards();
     }
 }
